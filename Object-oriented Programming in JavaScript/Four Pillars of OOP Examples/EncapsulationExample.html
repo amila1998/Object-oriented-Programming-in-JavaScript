@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <!--simple example of encapsulation that contains two data members with its setter and getter methods.-->
+    <script>  
+        class Student  
+          {  
+            constructor()  
+            {  
+               var name;  
+               var marks;  
+            }  
+                getName()  
+                {  
+                  return this.name;  
+                }  
+              setName(name)  
+              {  
+                this.name=name;  
+              }  
+                
+              getMarks()  
+              {  
+                return this.marks;  
+              }  
+            setMarks(marks)  
+            {  
+              this.marks=marks;  
+            }  
+          
+            }  
+            var student=new Student();  
+             student.setName("Amila");  
+             student.setMarks(95);  
+             document.writeln(student.getName()+" "+student.getMarks());  
+        </script>  
+    
+</body>
+</html>
