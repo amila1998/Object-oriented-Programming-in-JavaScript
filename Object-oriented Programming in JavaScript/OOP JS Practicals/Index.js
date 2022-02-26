@@ -1,4 +1,5 @@
-//Factorty Function
+
+ //Factorty Function
 function createCircle(radius){
     return {
         radius,
@@ -11,7 +12,7 @@ function createCircle(radius){
 
 
 //call createCircle funtion
-const circle = createCircle(1);
+const circle = createCircle(1); //object 1
 
 //Constructor Function
 function Circle(radius){
@@ -23,4 +24,14 @@ function Circle(radius){
 
 }
 //calling  Constructor Function
-const circle2 =  Circle(1);
+const circle2 = new Circle(10); //object 2
+
+//Adding Properties
+//circle.location = {x:1};
+
+//another way
+const propertyName = 'location'
+circle['location'] = {x:1};
+
+//delete Properties
+delete circle['location'];
