@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//Let's start with the Person class which includes FirstName & LastName property as s
+    function Person(firstName, lastName) {
+    this.FirstName = firstName || "unknown";
+    this.LastName = lastName || "unknown";            
+}
+
+Person.prototype.getFullName = function () {
+    return this.FirstName + " " + this.LastName;
+}
+//Now, we want to create Student class that inherits from Person class so that we don't have to redefine FirstName, LastName and getFullName() method in Student class. The following is a Student class that inherits Person class.
+function Student(firstName, lastName, schoolName, grade)
+{
+    Person.call(this, firstName, lastName);
+
+    this.SchoolName = schoolName || "unknown";
+    this.Grade = grade || 0;
+}
+//Student.prototype = Person.prototype;
+Student.prototype = new Person();
+Student.prototype.constructor = Student;
+
+
+
+//Now, we can create an object of Student that uses properties and methods of the Person as shown below.
+var std = new Student("James","Bond", "XYZ", 10);
+            
+alert(std.getFullName()); // James Bond
+alert(std instanceof Student); // true
+alert(std instanceof Person); // true
+    </script>
+</body>
+</html>
