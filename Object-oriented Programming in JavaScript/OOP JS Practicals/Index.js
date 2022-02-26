@@ -23,4 +23,4 @@ function Circle(radius){
 
 }
 //calling  Constructor Function
-const circle2 = new Circle(1);
+const circle2 =  Circle(1);
